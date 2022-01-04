@@ -7,15 +7,23 @@ APP.use(bodyParser.urlencoded({ extended: false }));
 APP.use(bodyParser.json());
 
 APP.get('/', (req, res) => {
-    res.send('Hello World!');
-})
+    res.send('Hope World!');
+});
 
 APP.post('/', (req, res) => {
-    const date = new Date();
     console.log(req.body);
     res.send({"message": "Hello World"});
     
-})
+});
+
+APP.post('/message', (req, res) => {
+    for (let key in req.body){
+        console.log(key)
+    }
+    res.send({"message": "Hello message World"});
+    
+});
+
 APP.post('/time', (req, res) => {
     const date = new Date();
     console.log( ">> ",
@@ -23,8 +31,8 @@ APP.post('/time', (req, res) => {
         date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+"."+date.getMilliseconds(),
         "----");
     console.log(req.body);
-    res.send({"message": "Hello World"});
-})
+    res.send({"message": "Hope time World"});
+});
 
 
 
@@ -35,4 +43,4 @@ APP.listen(PORT, () => {
     console.log('');
 
 
-})
+});
