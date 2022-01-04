@@ -1,3 +1,4 @@
 # node-debugg-server
 
-_to install use `npm install`_
+* _To install use `npm install`_
+* _To run use `npm run start`_
