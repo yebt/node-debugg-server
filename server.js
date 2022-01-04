@@ -12,14 +12,20 @@ APP.get('/', (req, res) => {
 
 APP.post('/', (req, res) => {
     const date = new Date();
+    console.log(req.body);
+    res.send({"message": "Hello World"});
+    
+})
+APP.post('/time', (req, res) => {
+    const date = new Date();
     console.log( ">> ",
         date.getFullYear() + "/" + date.getMonth() + "/"+date.getDay(),
         date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+"."+date.getMilliseconds(),
         "----");
     console.log(req.body);
     res.send({"message": "Hello World"});
-    
 })
+
 
 
 APP.listen(PORT, () => {
