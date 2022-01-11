@@ -19,6 +19,7 @@ APP.post('/', (req, res) => {
 APP.post('/message', (req, res) => {
     for (let key in req.body){
         console.log(key)
+        console.log(req.body[key])
     }
     res.send({"message": "Hello message World"});
     
