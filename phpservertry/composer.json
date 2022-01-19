@@ -1,0 +1,15 @@
+{
+    "name": "bey/phpservertry",
+    "autoload": {
+    },
+    "authors": [
+        {
+            "name": "Yahir Eduardo Bravo",
+            "email": "yahir.eduardo.bravo@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4",
+        "squizlabs/php_codesniffer": "^3.6"
+    }
+}

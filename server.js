@@ -5,6 +5,7 @@ const PORT = 5000
 
 APP.use(bodyParser.urlencoded({ extended: false }));
 APP.use(bodyParser.json());
+// APP.use(bodyParser.raw());
 
 APP.get('/', (req, res) => {
     res.send('Hope World!');
@@ -13,7 +14,7 @@ APP.get('/', (req, res) => {
 APP.post('/', (req, res) => {
     console.log(req.body);
     res.send({"message": "Hello World"});
-    
+
 });
 
 APP.post('/message', (req, res) => {
@@ -22,7 +23,7 @@ APP.post('/message', (req, res) => {
         console.log(req.body[key])
     }
     res.send({"message": "Hello message World"});
-    
+
 });
 
 APP.post('/time', (req, res) => {
@@ -35,6 +36,14 @@ APP.post('/time', (req, res) => {
     res.send({"message": "Hope time World"});
 });
 
+APP.post('/debugg', (req, res) => {
+    for (let key in req.body){
+        let valInput =   req.body[key] ;
+        console.log(valInput);
+        res.send({"message": "Hello message World"});
+    }
+
+});
 
 
 APP.listen(PORT, () => {
