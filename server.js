@@ -37,20 +37,27 @@ APP.post('/time', (req, res) => {
 });
 
 APP.post('/debugg', (req, res) => {
+    console.log('\x1b[48;2;26;26;26m\x1b[38;2;95;139;239m%s\x1b[0m', 'Call debug ---\n--------------');
+    console.log();
+    console.log();
     for (let key in req.body){
         let valInput =   req.body[key] ;
         console.log(valInput);
-        res.send({"message": "Hello message World"});
     }
+    res.send({"message": "Hello message World"});
+    console.log();
+    console.log();
+    console.log("\x1b[48;2;26;26;26m\x1b[38;2;66;184;131m%s\x1b[0m","end ----\n--------");
 
 });
 
 
 APP.listen(PORT, () => {
+    console.log('\x1b[48;2;26;26;26m\x1b[38;2;159;211;86m');
     console.log('-----------------------------------------------');
-    console.log(`Example app listening at http://localhost:${PORT}`)
+    console.log(`Example app listening at http://localhost:${PORT} `)
     console.log('-----------------------------------------------');
-    console.log('');
+    console.log('\x1b[0m');
 
 
 });
